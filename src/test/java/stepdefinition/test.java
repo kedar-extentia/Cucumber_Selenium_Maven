@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class test {
 //	private By driver;
     WebDriver driver;
@@ -26,6 +27,7 @@ public class test {
 
     @When("^I enter Username$")
     public void iEnterUsername() throws Throwable {
+
         driver.findElement(By.id("txtUsername")).sendKeys("opensourcecms");
     }
 
@@ -73,4 +75,8 @@ public class test {
 
     }
 
+    @And("I see something")
+    public void iSeeSomething() {
+        System.out.println("This is method being called from another one.....");
+    }
 } //Class ends

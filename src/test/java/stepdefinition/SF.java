@@ -1,6 +1,5 @@
 package stepdefinition;
 
-import gherkin.ast.Step;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,50 +8,48 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Calendar;
 import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
-import static org.junit.Assert.assertEquals;
 
 
 public class SF {
     WebDriver driver;
 
-//    @Given("SalesforceIQVIA login page is opened")
-//    public void salesforceiqviaLoginPageIsOpened() {
-//        System.setProperty("webdriver.chrome.driver","C:\\Users\\kedar.londhe\\kedarWorkspace\\Jar_libs\\chromedriver_win32\\chromedriver.exe");
-//        driver = new ChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        driver.get("https://test.salesforce.com");
-//    }
+    @Given("SalesforceIQVIA login page is opened")
+    public void salesforceiqviaLoginPageIsOpened() {
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\kedar.londhe\\kedarWorkspace\\Jar_libs\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://test.salesforce.com");
+    }
 
 
-//    @When("I login as admin")
-//    public void iLoginAsAdmin() throws Throwable {
-//        driver.findElement(By.id("username")).sendKeys("madhavi.bhattad@extentia.com.jpn.qa1");
-////        driver.findElement(By.id("password")).sendKeys("#Extentia20!9");
+    @When("I login as admin")
+    public void iLoginAsAdmin() throws Throwable {
+        driver.findElement(By.id("username")).sendKeys("madhavi.bhattad@extentia.com.jpn.qa1");
 //        driver.findElement(By.id("password")).sendKeys("#Extentia20!9");
-//        driver.findElement(By.id("Login")).click();
-//    }
-//
-//    @Then("I verify the Login Successful")
-//    public void iVerifyTheLoginSuccessful() throws InterruptedException {
-////        WebDriverWait wait = new WebDriverWait(driver,30);
-////        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title=\"Field Service Admin\"]")));
-//
-//        WebElement rxBtn = driver.findElement(By.xpath("//span[@title=\"Field Service Admin\"]"));
-//        Assert.assertTrue(rxBtn.isDisplayed());
-//    }
+        driver.findElement(By.id("password")).sendKeys("#Extentia20!9");
+        driver.findElement(By.id("Login")).click();
+    }
+
+    @Then("I verify the Login Successful")
+    public void iVerifyTheLoginSuccessful() throws InterruptedException {
+//        WebDriverWait wait = new WebDriverWait(driver,30);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title=\"Field Service Admin\"]")));
+
+        WebElement hdr = driver.findElement(By.xpath("//div[@class=\"slds-global-header slds-grid slds-grid--align-spread\"]"));
+        Assert.assertTrue(hdr.isDisplayed());
+    }
 
     @And("I logout from Salesforce")
     public void iLogoutFromSalesforce() throws InterruptedException {
@@ -61,7 +58,7 @@ public class SF {
         driver.findElement(By.xpath("//div[@class='profileTrigger branding-user-profile bgimg slds-avatar slds-avatar_profile-image-small circular forceEntityIcon']//span[@class='uiImage']")).click();
 //div[@class='profileTrigger branding-user-profile bgimg slds-avatar slds-avatar_profile-image-small circular forceEntityIcon']//span[@class='uiImage']
         //        driver.wait(5000);
-        driver.findElement(By.xpath("//a[@class=\"profile-link-label logout uiOutputURL\"]")).click();
+        driver.findElement(By.xpath("//a[@class='profile-link-label logout uiOutputURL']")).click();
     }
 
     @After
@@ -72,13 +69,23 @@ public class SF {
 
     @Given("I open the URL \"([^\"]*)\"$")
     public void iOpenURL(String arg0) {
-
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\kedar.londhe\\kedarWorkspace\\Jar_libs\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(arg0);
     }
 
-    @And("I select date {int} - {int} - {int}")
+    @And("I select Birth date {int} - {int} - {int}")
     public void iSelectDate(int arg0, int arg1, int arg2) throws InterruptedException {
+        WebElement scrollUP = driver.findElement(By.xpath("//SPAN[@class=''][text()='Birthdate']/../..//A[@class='datePicker-openIcon display']"));
+        JavascriptExecutor executor8 = (JavascriptExecutor) driver;
+        executor8.executeScript("arguments[0].scrollIntoView();", scrollUP);
+
         //open calender datepicker
         driver.findElement(By.xpath("//SPAN[@class=''][text()='Birthdate']/../..//A[@class='datePicker-openIcon display']")).click();
+        //verify datepicker displayed
+        driver.findElement(By.xpath("//span[@class='today slds-show--inline-block slds-text-link slds-p-bottom--x-small']")).isDisplayed();
+
         //select year from picklist
         Select year = new Select(driver.findElement(By.xpath("//select[@class='slds-select picklist__label']")));
         year.selectByValue(String.valueOf(arg2));
@@ -140,12 +147,13 @@ public class SF {
 
     @And("I click on New Account")
     public void iClickOnNewAccount() {
+        driver.findElement(By.xpath("//a[@class='slds-context-bar__label-action slds-p-left--xx-small'][@title='Accounts']")).click();
         driver.findElement(By.xpath("//li[@class='slds-button slds-button--neutral slds-truncate']//a[@title='New']")).click();
     }
 
     @And("I select Account Type")
     public void iSelectAccountType() {
-        driver.findElement(By.xpath("//span[contains(text(),'A1 Patient')]")).click();
+        driver.findElement(By.xpath("//span[@class='slds-form-element__label topdown-radio--label'][contains(text(),'A1 Patient')]")).click();
     }
 
     @And("I click Next button")
@@ -163,4 +171,35 @@ public class SF {
     public void tearDown() {
         driver.quit();
     }
+
+    @FindBy(id = "username") WebElement username;
+    @FindBy(id = "password") WebElement password;
+    @FindBy(id = "Login") WebElement LoginButton;
+
+    @When("I login as Nurse")
+    public void iLoginAsNurse() throws Throwable {
+        driver.findElement(By.id("username")).sendKeys("carecoordinator.mj9wmmacw0ux.4rgk75.x9ueuyivosvo.b57k9kdz65j5@force.com.qa1");
+//        driver.findElement(By.id("password")).sendKeys("#Extentia20!9");
+        driver.findElement(By.id("password")).sendKeys("#Extentia2020");
+        driver.findElement(By.id("Login")).click();
+    }
+
+    @And("I enter FirstName LastName")
+    public void iEnterFirstNameLastName() {
+        driver.findElement(By.xpath("//input[@class='lastName compoundBorderBottom form-element__row input']")).sendKeys("testLastName");
+        driver.findElement(By.xpath("//input[@class='firstName compoundBLRadius compoundBRRadius form-element__row input']")).sendKeys("testFirsttName");
+    }
+
+    @Then("I click Save button")
+    public void iClickSaveButton() {
+        driver.findElement(By.xpath("//button[@class='slds-button slds-button--neutral uiButton--brand uiButton forceActionButton']")).click();
+
+    }
+
+    @Then("verify account created successfully")
+    public void verifyAccountCreatedSuccessfully() {
+//        Assert.assertEquals("//span[@class='toastMessage slds-text-heading--small forceActionsText']", );
+    }
+
+
 }

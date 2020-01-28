@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="3" tests="3" time="0.197314">
-    <testcase classname="Automate SF scenarios" name="Login as admin to SalesforceIQVIA" time="0.126692">
-        <skipped>
-            <![CDATA[Given I open the URL "https://test.salesforce.com"..........................undefined
-When I login as admin.......................................................undefined
-Then I verify the Login Successful..........................................undefined
-And I logout from Salesforce................................................undefined
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="57.377797">
+    <testcase classname="Automate Patient Account related scenarios" name="Nurse should be able to create patient account" time="57.377797">
+        <failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class='profile-link-label logout uiOutputURL']&quot;}&#10;  (Session info: chrome=79.0.3945.130)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'EEEPC0636', ip: '172.16.10.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.5'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KEDAR~1.LON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50159}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 2af758e9d90e18ce2bc039510fdc1f54&#10;*** Element info: {Using=xpath, value=//a[@class='profile-link-label logout uiOutputURL']}&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#13;&#10;&#9;at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#13;&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#13;&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)&#13;&#10;&#9;at org.openqa.selenium.By$ByXPath.findElement(By.java:353)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#13;&#10;&#9;at stepdefinition.SF.iLogoutFromSalesforce(SF.java:61)&#13;&#10;&#9;at ✽.I logout from Salesforce(file:src/test/java/features/Patient.feature:21)&#13;&#10;">
+            <![CDATA[Given I open the URL "https://test.salesforce.com"..........................passed
+When I login as Nurse.......................................................passed
+Then I verify the Login Successful..........................................passed
+And I click on New Account..................................................passed
+And I select Account Type...................................................passed
+And I click Next button.....................................................passed
+And I enter FirstName LastName..............................................passed
+And I select Birth date 05 - 05 - 2002......................................passed
+Then I click Save button....................................................passed
+Then verify account created successfully....................................passed
+And I logout from Salesforce................................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='profile-link-label logout uiOutputURL']"}
+  (Session info: chrome=79.0.3945.130)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EEEPC0636', ip: '172.16.10.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KEDAR~1.LON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50159}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2af758e9d90e18ce2bc039510fdc1f54
+*** Element info: {Using=xpath, value=//a[@class='profile-link-label logout uiOutputURL']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at stepdefinition.SF.iLogoutFromSalesforce(SF.java:61)
+	at ✽.I logout from Salesforce(file:src/test/java/features/Patient.feature:21)
 ]]>
-        </skipped>
-    </testcase>
-    <testcase classname="Automate SF scenarios" name="Create Patient Account" time="0.019878">
-        <skipped>
-            <![CDATA[Given SalesforceIQVIA login page is opened..................................undefined
-When I login as admin.......................................................undefined
-And I click on New Account..................................................undefined
-And I select Account Type...................................................undefined
-And I click Next button.....................................................undefined
-And I select date 05 - 05 - 2022............................................undefined
-]]>
-        </skipped>
-    </testcase>
-    <testcase classname="Automate login validation" name="Login as admin to orangeHRM" time="0.050744">
-        <skipped>
-            <![CDATA[Given OrangeHRM login page is opened........................................undefined
-When I enter Username.......................................................undefined
-And I enter password........................................................undefined
-And I click on Login button.................................................undefined
-Then I validate the Login Successful........................................undefined
-And Dashboard is displayed..................................................undefined
-And I click on logout button................................................undefined
-Then I close new window.....................................................undefined
-]]>
-        </skipped>
+        </failure>
     </testcase>
 </testsuite>

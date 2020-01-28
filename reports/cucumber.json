@@ -3,233 +3,166 @@
     "line": 4,
     "elements": [
       {
-        "start_timestamp": "2020-01-23T12:17:46.048Z",
+        "start_timestamp": "2020-01-28T12:20:53.210Z",
         "line": 8,
-        "name": "Login as admin to SalesforceIQVIA",
+        "name": "Nurse should be able to create patient account",
         "description": "",
-        "id": "automate-sf-scenarios;login-as-admin-to-salesforceiqvia",
+        "id": "automate-patient-account-related-scenarios;nurse-should-be-able-to-create-patient-account",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "status": "undefined"
-            },
-            "line": 10,
-            "name": "I open the URL \"https://test.salesforce.com\"",
-            "match": {},
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 11,
-            "name": "I login as admin",
-            "match": {},
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 12,
-            "name": "I verify the Login Successful",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 14,
-            "name": "I logout from Salesforce",
-            "match": {},
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@tag"
-          },
-          {
-            "name": "@tag1"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-01-23T12:17:46.211Z",
-        "line": 17,
-        "name": "Create Patient Account",
-        "description": "",
-        "id": "automate-sf-scenarios;create-patient-account",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 18,
-            "name": "SalesforceIQVIA login page is opened",
-            "match": {},
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 20,
-            "name": "I login as admin",
-            "match": {},
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 22,
-            "name": "I click on New Account",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 23,
-            "name": "I select Account Type",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 24,
-            "name": "I click Next button",
-            "match": {},
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 25,
-            "name": "I select date 05 - 05 - 2022",
-            "match": {},
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@tag"
-          },
-          {
-            "name": "@tag"
-          }
-        ]
-      }
-    ],
-    "name": "Automate SF scenarios",
-    "description": "  I want to use this template for my cucumber poc",
-    "id": "automate-sf-scenarios",
-    "keyword": "Feature",
-    "uri": "file:src/test/java/features/SF.feature",
-    "tags": [
-      {
-        "name": "@tag",
-        "type": "Tag",
-        "location": {
-          "line": 3,
-          "column": 1
-        }
-      }
-    ]
-  },
-  {
-    "line": 4,
-    "elements": [
-      {
-        "start_timestamp": "2020-01-23T12:17:46.256Z",
-        "line": 8,
-        "name": "Login as admin to orangeHRM",
-        "description": "",
-        "id": "automate-login-validation;login-as-admin-to-orangehrm",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
+              "duration": 11910786400,
+              "status": "passed"
             },
             "line": 9,
-            "name": "OrangeHRM login page is opened",
-            "match": {},
+            "name": "I open the URL \"https://test.salesforce.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://test.salesforce.com",
+                  "offset": 16
+                }
+              ],
+              "location": "SF.iOpenURL(String)"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 8263251800,
+              "status": "passed"
             },
-            "line": 11,
-            "name": "I enter Username",
-            "match": {},
+            "line": 10,
+            "name": "I login as Nurse",
+            "match": {
+              "location": "SF.iLoginAsNurse()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 7983576100,
+              "status": "passed"
             },
-            "line": 12,
-            "name": "I enter password",
-            "match": {},
-            "keyword": "And "
+            "line": 11,
+            "name": "I verify the Login Successful",
+            "match": {
+              "location": "SF.iVerifyTheLoginSuccessful()"
+            },
+            "keyword": "Then "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 5662397800,
+              "status": "passed"
             },
             "line": 13,
-            "name": "I click on Login button",
-            "match": {},
+            "name": "I click on New Account",
+            "match": {
+              "location": "SF.iClickOnNewAccount()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 3439893300,
+              "status": "passed"
             },
             "line": 14,
-            "name": "I validate the Login Successful",
-            "match": {},
-            "keyword": "Then "
+            "name": "I select Account Type",
+            "match": {
+              "location": "SF.iSelectAccountType()"
+            },
+            "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 184627400,
+              "status": "passed"
             },
             "line": 15,
-            "name": "Dashboard is displayed",
-            "match": {},
+            "name": "I click Next button",
+            "match": {
+              "location": "SF.iClickNextButton()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 3783137400,
+              "status": "passed"
             },
             "line": 16,
-            "name": "I click on logout button",
-            "match": {},
+            "name": "I enter FirstName LastName",
+            "match": {
+              "location": "SF.iEnterFirstNameLastName()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 2499100100,
+              "status": "passed"
             },
-            "line": 18,
-            "name": "I close new window",
-            "match": {},
+            "line": 17,
+            "name": "I select Birth date 05 - 05 - 2002",
+            "match": {
+              "arguments": [
+                {
+                  "val": "05",
+                  "offset": 20
+                },
+                {
+                  "val": "05",
+                  "offset": 25
+                },
+                {
+                  "val": "2002",
+                  "offset": 30
+                }
+              ],
+              "location": "SF.iSelectDate(int,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3192996300,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I click Save button",
+            "match": {
+              "location": "SF.iClickSaveButton()"
+            },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 882400,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "verify account created successfully",
+            "match": {
+              "location": "SF.verifyAccountCreatedSuccessfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@class\u003d\u0027profile-link-label logout uiOutputURL\u0027]\"}\n  (Session info: chrome\u003d79.0.3945.130)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027EEEPC0636\u0027, ip: \u0027172.16.10.71\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.5\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\KEDAR~1.LON\\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50159}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 2af758e9d90e18ce2bc039510fdc1f54\n*** Element info: {Using\u003dxpath, value\u003d//a[@class\u003d\u0027profile-link-label logout uiOutputURL\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat stepdefinition.SF.iLogoutFromSalesforce(SF.java:61)\r\n\tat ✽.I logout from Salesforce(file:src/test/java/features/Patient.feature:21)\r\n",
+              "duration": 10353158000,
+              "status": "failed"
+            },
+            "line": 21,
+            "name": "I logout from Salesforce",
+            "match": {
+              "location": "SF.iLogoutFromSalesforce()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
@@ -237,19 +170,16 @@
             "name": "@tag"
           },
           {
-            "name": "@tag1"
-          },
-          {
-            "name": "@test"
+            "name": "@smoke"
           }
         ]
       }
     ],
-    "name": "Automate login validation",
-    "description": "  I want to use this template for my cucumber poc",
-    "id": "automate-login-validation",
+    "name": "Automate Patient Account related scenarios",
+    "description": "  Create Account, Care Plan, Tasks, Events Scheduling etc.",
+    "id": "automate-patient-account-related-scenarios",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/test.feature",
+    "uri": "file:src/test/java/features/Patient.feature",
     "tags": [
       {
         "name": "@tag",

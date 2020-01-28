@@ -1,34 +1,43 @@
 @tag
-Feature: Automate SF scenarios
-  I want to use this template for my cucumber poc
+Feature: Automate Patient Account related scenarios
+  Create Account, Care Plan, Tasks, Events Scheduling etc.
 
-  @tag @tag1
-  Scenario: Login as admin to SalesforceIQVIA          # src/test/java/features/SF.feature:8
-    Given I open the URL "https://test.salesforce.com" # null
-    When I login as admin                              # null
-    Then I verify the Login Successful                 # null
-    And I logout from Salesforce                       # null
+  @tag @smoke
+  Scenario: Nurse should be able to create patient account # src/test/java/features/Patient.feature:8
+    Given I open the URL "https://test.salesforce.com"     # SF.iOpenURL(String)
+    When I login as Nurse                                  # SF.iLoginAsNurse()
+    Then I verify the Login Successful                     # SF.iVerifyTheLoginSuccessful()
+    And I click on New Account                             # SF.iClickOnNewAccount()
+    And I select Account Type                              # SF.iSelectAccountType()
+    And I click Next button                                # SF.iClickNextButton()
+    And I enter FirstName LastName                         # SF.iEnterFirstNameLastName()
+    And I select Birth date 05 - 05 - 2002                 # SF.iSelectDate(int,int,int)
+    Then I click Save button                               # SF.iClickSaveButton()
+    Then verify account created successfully               # SF.verifyAccountCreatedSuccessfully()
+    And I logout from Salesforce                           # SF.iLogoutFromSalesforce()
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='profile-link-label logout uiOutputURL']"}
+  (Session info: chrome=79.0.3945.130)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EEEPC0636', ip: '172.16.10.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\KEDAR~1.LON\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50159}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2af758e9d90e18ce2bc039510fdc1f54
+*** Element info: {Using=xpath, value=//a[@class='profile-link-label logout uiOutputURL']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at stepdefinition.SF.iLogoutFromSalesforce(SF.java:61)
+	at ✽.I logout from Salesforce(file:src/test/java/features/Patient.feature:21)
 
-  @tag @tag
-  Scenario: Create Patient Account             # src/test/java/features/SF.feature:17
-    Given SalesforceIQVIA login page is opened # null
-    When I login as admin                      # null
-    And I click on New Account                 # null
-    And I select Account Type                  # null
-    And I click Next button                    # null
-    And I select date 05 - 05 - 2022           # null
-
-@tag
-Feature: Automate login validation
-  I want to use this template for my cucumber poc
-
-  @tag @tag1 @test
-  Scenario: Login as admin to orangeHRM  # src/test/java/features/test.feature:8
-    Given OrangeHRM login page is opened # null
-    When I enter Username                # null
-    And I enter password                 # null
-    And I click on Login button          # null
-    Then I validate the Login Successful # null
-    And Dashboard is displayed           # null
-    And I click on logout button         # null
-    Then I close new window              # null

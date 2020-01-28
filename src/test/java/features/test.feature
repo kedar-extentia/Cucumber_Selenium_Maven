@@ -15,8 +15,7 @@ Feature: Automate login validation
     And Dashboard is displayed
     And I click on logout button
 #    Then I take screenshot12
+    And I see something
     Then I close new window
-
-
 
 
