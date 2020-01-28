@@ -1,0 +1,34 @@
+@tag
+Feature: Automate SF scenarios
+  I want to use this template for my cucumber poc
+
+  @tag @tag1
+  Scenario: Login as admin to SalesforceIQVIA          # src/test/java/features/SF.feature:8
+    Given I open the URL "https://test.salesforce.com" # null
+    When I login as admin                              # null
+    Then I verify the Login Successful                 # null
+    And I logout from Salesforce                       # null
+
+  @tag @tag
+  Scenario: Create Patient Account             # src/test/java/features/SF.feature:17
+    Given SalesforceIQVIA login page is opened # null
+    When I login as admin                      # null
+    And I click on New Account                 # null
+    And I select Account Type                  # null
+    And I click Next button                    # null
+    And I select date 05 - 05 - 2022           # null
+
+@tag
+Feature: Automate login validation
+  I want to use this template for my cucumber poc
+
+  @tag @tag1 @test
+  Scenario: Login as admin to orangeHRM  # src/test/java/features/test.feature:8
+    Given OrangeHRM login page is opened # null
+    When I enter Username                # null
+    And I enter password                 # null
+    And I click on Login button          # null
+    Then I validate the Login Successful # null
+    And Dashboard is displayed           # null
+    And I click on logout button         # null
+    Then I close new window              # null

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="3" tests="3" time="0.197314">
+    <testcase classname="Automate SF scenarios" name="Login as admin to SalesforceIQVIA" time="0.126692">
+        <skipped>
+            <![CDATA[Given I open the URL "https://test.salesforce.com"..........................undefined
+When I login as admin.......................................................undefined
+Then I verify the Login Successful..........................................undefined
+And I logout from Salesforce................................................undefined
+]]>
+        </skipped>
+    </testcase>
+    <testcase classname="Automate SF scenarios" name="Create Patient Account" time="0.019878">
+        <skipped>
+            <![CDATA[Given SalesforceIQVIA login page is opened..................................undefined
+When I login as admin.......................................................undefined
+And I click on New Account..................................................undefined
+And I select Account Type...................................................undefined
+And I click Next button.....................................................undefined
+And I select date 05 - 05 - 2022............................................undefined
+]]>
+        </skipped>
+    </testcase>
+    <testcase classname="Automate login validation" name="Login as admin to orangeHRM" time="0.050744">
+        <skipped>
+            <![CDATA[Given OrangeHRM login page is opened........................................undefined
+When I enter Username.......................................................undefined
+And I enter password........................................................undefined
+And I click on Login button.................................................undefined
+Then I validate the Login Successful........................................undefined
+And Dashboard is displayed..................................................undefined
+And I click on logout button................................................undefined
+Then I close new window.....................................................undefined
+]]>
+        </skipped>
+    </testcase>
+</testsuite>

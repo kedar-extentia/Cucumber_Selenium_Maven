@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testng-results failed="0" passed="0" skipped="3" total="3">
+    <suite duration-ms="0" name="cucumber.runtime.formatter.TestNGFormatter">
+        <test duration-ms="0" name="cucumber.runtime.formatter.TestNGFormatter">
+            <class name="Automate SF scenarios">
+                <test-method duration-ms="0" finished-at="2020-01-23T17:47:46Z" name="Login as admin to SalesforceIQVIA" started-at="2020-01-23T17:47:46Z" status="SKIP"/>
+                <test-method duration-ms="0" finished-at="2020-01-23T17:47:46Z" name="Create Patient Account" started-at="2020-01-23T17:47:46Z" status="SKIP"/>
+            </class>
+            <class name="Automate login validation">
+                <test-method duration-ms="0" finished-at="2020-01-23T17:47:46Z" name="Login as admin to orangeHRM" started-at="2020-01-23T17:47:46Z" status="SKIP"/>
+            </class>
+        </test>
+    </suite>
+</testng-results>
